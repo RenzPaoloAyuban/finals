@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
 <nav>
     <a href="#home"><img src="img/logo.png" alt="logo"></a>
     <ul>

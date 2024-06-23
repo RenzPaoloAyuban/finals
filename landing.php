@@ -1,4 +1,5 @@
 <?php include("login.php"); ?>
+<?php include("signup.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,9 +7,7 @@
     <meta charset="U    TF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furfolio | Be A Proud Cat Parent</title>
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
+    
     <?php include("header.php"); ?>
     <div class="container" id="container">
         <section class="panel1" id="home">
@@ -113,6 +112,4 @@
     </div>
     <?php include("footer.php"); ?>
 
-   <script src="script/script.js"></script> 
-</body>
-</html>
+   

@@ -20,7 +20,7 @@ if(isset($_POST["signup-sbmt"])) {
     } 
     else {
         if($password == $confirmpassword) {
-            $query = "INSERT INTO logreg VALUES('', '$name', '$username', '$email', '$password')";
+            $query = "INSERT INTO logreg VALUES('', '$name', '$username', '$email', '$password', 'user')";
             mysqli_query($conn, $query);
             echo "<script> alert('Registration Successful!'); </script>";
         }

@@ -12,19 +12,17 @@ if(isset($_POST["login-sbmt"])) {
 
     $result = mysqli_query($conn,"SELECT * FROM logreg WHERE username = '$useremail' OR email = '$useremail'");
 
-    $row = mysqli_fetch_assoc($result);
+    $row = mysqli_fetch_array($result);
 
     if(mysqli_num_rows($result) > 0) {
         if($userpassword == $row["password"]) {
-            if($row["usertype"] == "user") {
-                $_SESSION["login"] = true;
+            $_SESSION["login"] = true;
+            if ($row["usertype"] == "admin") {
+                $_SESSION["admin"] = $row["name"];
+                header("location: admin.php");
+            } elseif ($row["usertype"] == "user") {
                 $_SESSION["id"] = $row["id"];
                 header("location: index.php");
-            }
-            else if($row["usertype"] == "admin") {
-                $_SESSION["login"] = true;
-                $_SESSION["id"] = $row["id"];
-                header("location: admin.php");
             }
         }
         else {

@@ -92,6 +92,20 @@ nav .nav-buttons button {
     cursor: pointer;
 }
 
+.logout {
+    font-size: 16px;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #6C0345;
+    color: #FCF4D9;
+    border-radius: 10px;
+}
+
+.logout:hover {
+    background-color: #FCF4D9;
+    color: #6C0345;
+}
+
 /* PANEL 1 */
 
 .panel1 {
@@ -447,3 +461,90 @@ footer a {
     top: 50%;
     transform: translate(-50%, -35%);
 }
+
+/* ADMIN PAGE */
+.admin-container {
+    width: 100%;
+}
+
+.table-buttons {
+    margin: 120px 0 0 370px;
+}
+
+
+.table-buttons button {
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    color: #FCF4D9;
+    cursor: pointer;
+    box-shadow: 10px 5px 20px #813b08;
+}
+
+.table-buttons button:hover {
+    background-color: #FCF4D9;
+    color: #DC6B19;
+}
+
+.table-user-btn {
+    width: 30%;
+    background-color: #DC6B19;
+}
+
+.table-feed-btn {
+    margin-left: 25px;
+    width: 30%;
+    background-color: #6C0345;
+}
+
+.tables {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-tables {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+}
+
+.tables thead tr {
+    background-color: #DC6B19;
+    color: #FCF4D9;
+    text-align: left;
+    font-weight: bold;
+}
+
+.tables th,
+.tables td {
+    padding: 12px 15px;
+}
+
+.tables tbody tr {
+    border-bottom: 2px solid #dddddd;
+}
+
+.tables tbody tr:nth-of-type(even) {
+    background-color: #F6C465;
+}
+
+.tables tbody tr:last-of-type {
+    border-bottom: 2px solid #813b08;
+}
+
+.tables tbody tr td a {
+    text-decoration: none;
+    background-color: #6C0345;
+    padding: 5px;
+    border-radius: 10px;
+    color: #FCF4D9;
+    margin: 3px;
+}
+
+.tables tbody tr td a:hover {
+    background-color: #DC6B19;
+}
+
