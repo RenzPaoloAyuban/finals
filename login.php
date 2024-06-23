@@ -16,9 +16,16 @@ if(isset($_POST["login-sbmt"])) {
 
     if(mysqli_num_rows($result) > 0) {
         if($userpassword == $row["password"]) {
-            $_SESSION["login"] = true;
-            $_SESSION["id"] = $row["id"];
-            header("location: index.php");
+            if($row["usertype"] == "user") {
+                $_SESSION["login"] = true;
+                $_SESSION["id"] = $row["id"];
+                header("location: index.php");
+            }
+            else if($row["usertype"] == "admin") {
+                $_SESSION["login"] = true;
+                $_SESSION["id"] = $row["id"];
+                header("location: admin.php");
+            }
         }
         else {
             echo "<script>alert('Wrong Password!')</script>";    
