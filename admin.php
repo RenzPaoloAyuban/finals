@@ -73,12 +73,39 @@ if(!empty($_SESSION["usertype"])) {
                         <th>PET NAME</th>
                         <th>BREED</th>
                         <th>BIRTHDAY</th>
-                        <th>PICTURE</th>
+                        <th>IMAGE</th>
                         <th>DESCRIPTION</th>
                         <th>TALENT</th>
                         <th>ACTIONS</th>
                     </tr>
                 </thead>
+                <tbody>
+                <?php
+
+                    $query = "SELECT * FROM `furfolio_feed`";
+
+                    $result = mysqli_query($conn, $query);
+
+                    if (!$result) {
+                        die("Query Failed: " . mysqli_error($conn));
+                    } else {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+
+                    <tr>
+                        <td><?php echo $row['petname'] ?></td>
+                        <td><?php echo $row['breed'] ?></td>
+                        <td><?php echo $row['birthday'] ?></td>
+                        <td><?php echo $row['picture'] ?></td>
+                        <td><?php echo $row['description'] ?></td>
+                        <td><?php echo $row['talent'] ?></td>
+                        <td><a href="update_user.php?id=<?php echo $row['id'] ?>">Update</a><a href="delete_user.php?id=<?php echo $row['id']; ?>">Delete</a></td>
+                    </tr>
+                    <?php
+                        }
+                    }
+                    ?>    
+                </tbody>
             </table>
         </div> 
     </div>
