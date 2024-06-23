@@ -471,7 +471,6 @@ footer a {
     margin: 120px 0 0 370px;
 }
 
-
 .table-buttons button {
     border-radius: 10px;
     border: none;
@@ -494,7 +493,7 @@ footer a {
 .table-feed-btn {
     margin-left: 25px;
     width: 30%;
-    background-color: #6C0345;
+    background-color: #DC6B19;
 }
 
 .tables {
@@ -504,38 +503,39 @@ footer a {
     justify-content: center;
 }
 
-.user-tables {
+/* TABLE FOR REGISTERED USERS */
+.user-table {
     border-collapse: collapse;
     font-size: 0.9em;
     min-width: 400px;
     border-radius: 5px 5px 0 0;
 }
 
-.tables thead tr {
+.tables .user-table thead tr {
     background-color: #DC6B19;
     color: #FCF4D9;
     text-align: left;
     font-weight: bold;
 }
 
-.tables th,
-.tables td {
+.tables .user-table th,
+.tables .user-table td {
     padding: 12px 15px;
 }
 
-.tables tbody tr {
+.tables .user-table tbody tr {
     border-bottom: 2px solid #dddddd;
 }
 
-.tables tbody tr:nth-of-type(even) {
+.tables .user-table tbody tr:nth-of-type(even) {
     background-color: #F6C465;
 }
 
-.tables tbody tr:last-of-type {
+.tables .user-table tbody tr:last-of-type {
     border-bottom: 2px solid #813b08;
 }
 
-.tables tbody tr td a {
+.tables .user-table tbody tr td a {
     text-decoration: none;
     background-color: #6C0345;
     padding: 5px;
@@ -544,7 +544,73 @@ footer a {
     margin: 3px;
 }
 
-.tables tbody tr td a:hover {
+.tables .user-table tbody tr td a:hover {
     background-color: #DC6B19;
+}
+
+.show-user-table {
+    visibility: hidden;
+}
+
+/*TABLE FOR FURFOLIO FEED */
+
+.feed-table {
+    top: 0;
+    left: 50%;
+    transform: translateY(-800%);
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+}
+
+.tables .feed-table thead tr {
+    background-color: #DC6B19;
+    color: #FCF4D9;
+    text-align: left;
+    font-weight: bold;
+}
+
+.tables .feed-table th,
+.tables .feed-table td {
+    padding: 12px 15px;
+}
+
+.tables .feed-table tbody tr {
+    border-bottom: 2px solid #dddddd;
+}
+
+.tables .feed-table tbody tr:nth-of-type(even) {
+    background-color: #F6C465;
+}
+
+.tables .feed-table tbody tr:last-of-type {
+    border-bottom: 2px solid #813b08;
+}
+
+.tables .feed-table tbody tr td a {
+    text-decoration: none;
+    background-color: #6C0345;
+    padding: 5px;
+    border-radius: 10px;
+    color: #FCF4D9;
+    margin: 3px;
+}
+
+.tables .feed-table tbody tr td a:hover {
+    background-color: #DC6B19;
+}
+
+.show-feed-table {
+    transform: translateY(-200%);
+}
+
+.popup-message h2{
+    color: #DC6B19;
+    transform: translate(37%);
+}
+
+.pop-msg {
+    visibility: hidden;
 }
 

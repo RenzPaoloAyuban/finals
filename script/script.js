@@ -8,7 +8,10 @@ const home = document.getElementById("home");
 const aboutus = document.getElementById("aboutus");
 const whycats = document.getElementById("whycats");
 
-
+// Admin Page Buttons
+const registered_users = document.getElementById("user-table");
+const furfolio_feed = document.getElementById("feed-table");
+const pop_message = document.getElementById("pop-message");
 
 function loginPopup() {
     signup_pop.classList.remove("signupPopup");
@@ -32,4 +35,16 @@ function signupPopup() {
     home.classList.add("blur");
     aboutus.classList.add("blur");
     whycats.classList.add("blur");
+}
+
+function registeredUsers() {
+    registered_users.classList.remove("show-user-table");
+    furfolio_feed.classList.remove("show-feed-table");
+    pop_message.classList.add("pop-msg");
+}
+
+function furfolioFeed() {
+    registered_users.classList.add("show-user-table");
+    furfolio_feed.classList.add("show-feed-table");
+    pop_message.classList.add("pop-msg");
 }

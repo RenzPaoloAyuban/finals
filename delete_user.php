@@ -7,7 +7,7 @@
 
         $query = "DELETE FROM `logreg` where `id` = '$id'";
 
-        if($id != 3) {
+        if($id != 1) {
 
             $result = mysqli_query($conn, $query);
             if(!$result) {

@@ -20,13 +20,17 @@ if(!empty($_SESSION["usertype"])) {
 </head>
 <body> 
     <nav>
+
         <a href="#home"><img src="img/logo.png" alt="logo"></a>
-        <a class="logout" href="landing.php">LOG OUT</a>
+        <div class="nav-buttons">
+            <a class="logout" href="landing.php">LOG OUT</a>
+            <button></button>
+        </div>
     </nav>
     <div class="admin-container">
         <div class="table-buttons">
-            <button class="table-user-btn" onclick="">REGISTERED USERS</button>
-            <button class="table-feed-btn" onclick="">FURFOLIO FEED</button>
+            <button class="table-user-btn" onclick="registeredUsers()">REGISTERED USERS</button>
+            <button class="table-feed-btn" onclick="furfolioFeed()">FURFOLIO FEED</button>
         </div>
         <div class="tables">
             <table class="user-table" id="user-table">
@@ -63,19 +67,35 @@ if(!empty($_SESSION["usertype"])) {
                     ?>                
                 </tbody>
             </table>
-            
-        </div>
-
-        
+            <table class="feed-table" id="feed-table">
+                <thead>
+                    <tr>
+                        <th>PET NAME</th>
+                        <th>BREED</th>
+                        <th>BIRTHDAY</th>
+                        <th>PICTURE</th>
+                        <th>DESCRIPTION</th>
+                        <th>TALENT</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+            </table>
+        </div> 
     </div>
-    <div class="popup-message">
+
+
+    <div class="popup-message" id="pop-message">
         <?php
+            if (isset($_GET['delete_msg'])) {
+                echo "<h2>".$_GET['delete_msg']."</h2>";
+            }
+    
             if (isset($_GET['fdelete_msg'])) {
-                echo "<h6>".$_GET['fdelete_msg']."</h6>";
+                echo "<h2>".$_GET['fdelete_msg']."</h2>";
             }
         ?>
     </div>
-
+    <script src="script/script.js"></script>
 </body>
     
 

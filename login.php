@@ -12,7 +12,7 @@ if(isset($_POST["login-sbmt"])) {
 
     $result = mysqli_query($conn,"SELECT * FROM logreg WHERE username = '$useremail' OR email = '$useremail'");
 
-    $row = mysqli_fetch_array($result);
+    $row = mysqli_fetch_assoc($result);
 
     if(mysqli_num_rows($result) > 0) {
         if($userpassword == $row["password"]) {

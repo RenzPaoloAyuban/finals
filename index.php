@@ -4,7 +4,9 @@ require_once("dbcon.php");
 
 if(!empty($_SESSION["id"])) {
     $id = $_SESSION["id"];
+
     $result = mysqli_query($conn,"SELECT * FROM logreg WHERE id = '$id'");
+    
     $row = mysqli_fetch_assoc($result);
 }
 
