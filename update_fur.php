@@ -1,6 +1,15 @@
 <?php include('dbcon.php'); ?>
 
 <?php
+
+if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
+    echo "<script>alert('You need to login first')</script>";
+    header('Location: landing.php');
+    exit;
+}
+?>
+
+<?php
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $query = "SELECT * FROM `furfolio_feed` WHERE `id` = '$id'";
@@ -68,24 +77,24 @@ if (isset($_POST['updatePets'])) {
                     <div class="input-entry1">
                         <div class="separator">
                             <label for="petname">PET'S NAME: </label>
-                            <input type="text" name="petname">
+                            <input type="text" name="petname" value="<?php echo $row['petname']?>">
                         </div>
                         <div class="separator">
                                 <label for="breed">BREED: </label>
-                                <input type="text" name="breed">
+                                <input type="text" name="breed" value="<?php echo $row['breed']?>">
                         </div>
                     </div>
                     <div class="input-entry">
                         <label for="birthday">BIRTHDAY: </label>
-                        <input type="date" name="birthday">
+                        <input type="date" name="birthday" value="<?php echo $row['birthday']?>">
                     </div>
                     <div class="input-entry">
                         <label for="description">PET'S DESCRIPTION: </label>
-                        <textarea class="pet-desc" name="description" rows="6" cols="50" placeholder="Enter your pet's description"></textarea>
+                        <textarea class="pet-desc" name="description" rows="6" cols="50" placeholder="Enter your pet's description"><?php echo $row['description']?>"</textarea>
                     </div>
                     <div class="input-entry">
                         <label for="talent">TALENT: </label>
-                        <input type="text" name="talent">
+                        <input type="text" name="talent" value="<?php echo $row['talent']?>">
                     </div>
                         <input class="submit-btn" type="submit" name="updatePets" value="ADD ENTRY">
                 </form>

@@ -176,6 +176,11 @@ nav .nav-buttons button {
     border-radius: 10px;
     border: none;
     width: 100px;
+    cursor: pointer;
+}
+
+.join-buttons button:hover {
+    background-color: #6C0345;
 }
 
 .join-buttons p {

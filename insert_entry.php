@@ -33,10 +33,20 @@ if (isset($_POST['addEntry'])) {
 
             $query = "INSERT INTO furfolio_feed VALUES('', '$petname', '$breed', '$birthday', '$newImageName', '$description', '$talent')";
             mysqli_query($conn, $query);
-            echo "<script>
-                    alert('Successfully Added')
-                    document.location.href = 'admin.php'
-                </script>";
+
+            if ($_SESSION['id'] === 1) {
+                echo "<script>
+                        alert('Successfully Added');
+                        document.location.href = 'admin.php?id=" . $_SESSION['id'] . "';
+                      </script>";
+                exit();
+            } else {
+                echo "<script>
+                        alert('Successfully Added');
+                        document.location.href = 'index.php?id=" . $_SESSION['id'] . "';
+                      </script>";
+                exit();
+            }
         }
     }
 }

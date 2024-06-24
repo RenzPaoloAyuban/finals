@@ -12,18 +12,21 @@ const whycats = document.getElementById("whycats");
 const popup = document.getElementById("popup");
 const admin_page = document.getElementById("admin-tables");
 const welcome = document.getElementById("welcome");
+const furf_feed = document.getElementById("furf-feed");
 const confirm_popup = document.getElementById("confirm-popup");
 
 function insertEntry() {
     popup.classList.add("openPopup");
     admin_page.classList.add("blur");
     welcome.classList.add("blur");
+    furf_feed.classList.add("blur");
 }
 
 function closePopupEntry() {
     popup.classList.remove("openPopup");
     admin_page.classList.remove("blur");
     welcome.classList.remove("blur");
+    furf_feed.classList.remove("blur");
 }
 
 function deleteRecord(id) {

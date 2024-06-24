@@ -3,7 +3,7 @@
 require_once("dbcon.php");
 
 if(!empty($_SESSION["id"])) {
-    header("location: index.php");
+    header("Location: index.php?id=" . $_SESSION['id']);
 }
 
 if(isset($_POST["signup-sbmt"])) {
@@ -22,8 +22,8 @@ if(isset($_POST["signup-sbmt"])) {
         if($password == $confirmpassword) {
             $query = "INSERT INTO logreg VALUES('', '$name', '$username', '$email', '$password', 'user')";
             mysqli_query($conn, $query);
-            header("Location: index.php");
-        }
+            echo "<script> alert('Registration successful! Please login first.'); </script>";
+        } 
         else {
             echo "<script> alert('Password does not match'); </script>";
         }

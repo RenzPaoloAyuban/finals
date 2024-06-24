@@ -3,7 +3,7 @@
 require_once("dbcon.php");
 
 if(!empty($_SESSION["id"])) {
-    header("location: index.php");
+    header("Location: index.php?id=" . $_SESSION['id']);
 }
 
 if(isset($_POST["login-sbmt"])) {
@@ -18,11 +18,13 @@ if(isset($_POST["login-sbmt"])) {
         if($userpassword == $row["password"]) {
             $_SESSION["login"] = true;
             if ($row["usertype"] == "admin") {
-                $_SESSION["admin"] = $row["name"];
+                $_SESSION["id"] = $row["id"];
                 header("location: admin.php");
+                exit();
             } elseif ($row["usertype"] == "user") {
                 $_SESSION["id"] = $row["id"];
-                header("location: index.php");
+                header("Location: index.php?id=" . $row['id']);
+                exit();
             }
         }
         else {

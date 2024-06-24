@@ -1,6 +1,15 @@
     <?php include('dbcon.php') ?>
 
     <?php
+
+    if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
+    echo "<script>alert('You need to login first')</script>";
+    header('Location: landing.php');
+    exit;
+    }
+    
+    ?>
+    <?php
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $query = "SELECT * FROM `logreg` WHERE `id` = '$id'";

@@ -12,6 +12,34 @@ if(!empty($_SESSION["id"])) {
 
 ?>
 
+<?php
+
+if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
+    echo "<script>alert('You need to login first')</script>";
+    header('Location: landing.php');
+    exit;
+}
+?>
+
+
+
+<?php
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $query = "SELECT * FROM `logreg` WHERE `id` = '$id'";
+
+    $result = mysqli_query($conn, $query);
+
+    if (!$result) {
+        die("Query Failed: " . mysqli_error($conn));
+    } else {
+        $row = mysqli_fetch_assoc($result);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +53,7 @@ if(!empty($_SESSION["id"])) {
         <a href="#home"><img src="img/logo.png" alt="logo"></a>
         <div class="nav-buttons">
             <button class="addpet-btn" onclick="insertEntry()">ADD PETS</button>
-            <a class="logout" href="landing.php">LOG OUT</a>
+            <a class="logout" href="logout.php">LOG OUT</a>
         </div>
     </nav>
     <div class="welcome" id="welcome">
@@ -62,8 +90,17 @@ if(!empty($_SESSION["id"])) {
                             <td><?php echo $row['name'] ?></td>
                             <td><?php echo $row['username'] ?></td>
                             <td><?php echo $row['email'] ?></td>
-                            <td><a href="update_user.php?id=<?php echo $row['id'] ?>">Update</a><a href="delete_user.php?id=<?php echo $row['id']; ?>">Delete</a></td>
-                        </tr>
+                            <td>
+                                <a href="update_user.php?id=<?php echo $row['id'] ?>">Update</a>
+                                <a href="#" onclick="deleteRecord(<?php echo $row['id']; ?>)">Delete</a>
+                                <div class="confirm-popup" id="confirm-popup-<?php echo $row['id']; ?>">
+                                    <p>Are you sure you want to delete this record?</p>
+                                    <div class="confirm-btns">
+                                        <a class="confirm-anchors" href="delete_user.php?id=<?php echo $row['id']; ?>">Yes</a>
+                                        <a class="confirm-anchors" onclick="cancel(<?php echo $row['id']; ?>)">Cancel</a>
+                                    </div>
+                                </div>
+                            </td>                        </tr>
                         <?php
                                 }
                             }
@@ -169,5 +206,3 @@ if(!empty($_SESSION["id"])) {
     <script src="script/script.js"></script>
 </body>
     
-
- 
