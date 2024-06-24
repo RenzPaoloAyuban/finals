@@ -22,7 +22,7 @@ if(isset($_POST["signup-sbmt"])) {
         if($password == $confirmpassword) {
             $query = "INSERT INTO logreg VALUES('', '$name', '$username', '$email', '$password', 'user')";
             mysqli_query($conn, $query);
-            echo "<script> alert('Registration Successful!'); </script>";
+            header("Location: index.php");
         }
         else {
             echo "<script> alert('Password does not match'); </script>";

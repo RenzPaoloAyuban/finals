@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -102,6 +102,20 @@ nav .nav-buttons button {
 }
 
 .logout:hover {
+    background-color: #FCF4D9;
+    color: #6C0345;
+}
+
+.addpet-btn {
+    font-size: 16px;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #6C0345;
+    color: #FCF4D9;
+    border-radius: 10px;
+}
+
+.addpet-btn:hover {
     background-color: #FCF4D9;
     color: #6C0345;
 }
@@ -463,12 +477,24 @@ footer a {
 }
 
 /* ADMIN PAGE */
+
+.welcome {
+    margin: 120px 0 0 50px;
+}
+
+.welcome h1 {
+    color: #DC6B19;
+}
+
 .admin-container {
-    width: 100%;
+    width: 97%;
+    background-color: #dc6a1933;
+    margin: 10px;
+    padding: 5px;
 }
 
 .table-buttons {
-    margin: 120px 0 0 370px;
+    margin: 20px 0 0 350px;
 }
 
 .table-buttons button {
@@ -538,7 +564,7 @@ footer a {
 .tables .user-table tbody tr td a {
     text-decoration: none;
     background-color: #6C0345;
-    padding: 5px;
+    padding: 7px;
     border-radius: 10px;
     color: #FCF4D9;
     margin: 3px;
@@ -555,9 +581,8 @@ footer a {
 /*TABLE FOR FURFOLIO FEED */
 
 .feed-table {
-    top: 0;
-    left: 50%;
-    transform: translateY(-800%);
+    margin-top: -80px;
+    visibility: hidden;
     border-collapse: collapse;
     font-size: 0.9em;
     min-width: 400px;
@@ -591,10 +616,11 @@ footer a {
 .tables .feed-table tbody tr td a {
     text-decoration: none;
     background-color: #6C0345;
-    padding: 5px;
+    padding: 7px;
     border-radius: 10px;
     color: #FCF4D9;
     margin: 3px;
+    cursor: pointer;
 }
 
 .tables .feed-table tbody tr td a:hover {
@@ -602,7 +628,7 @@ footer a {
 }
 
 .show-feed-table {
-    transform: translateY(-200%);
+    visibility: visible;
 }
 
 .popup-message h2{
@@ -610,7 +636,152 @@ footer a {
     transform: translate(37%);
 }
 
+/* POPUP ENTRY */
+
+.popup-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 560px;
+    height: 560px;
+    background: #FCF4D9;
+    border-radius: 20px;
+    position: absolute;
+    transform: translate(70%, 20%);
+    padding: 10px;
+    box-shadow: 10px 5px 30px #813b08;
+    visibility: hidden;
+}
+
+.popup-entry h2 {
+    margin-top: 10px;
+    color: #DC6B19;
+}
+
+.popup-entry form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 12px;
+}
+.input-entry {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 2px;
+}
+
+.input-entry1 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.separator {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.popup-entry .input-entry1 input {
+    width: 230px;
+    background-color: #F6C465;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+.popup-entry .input-entry input {
+    width: 480px;
+    background-color: #F6C465;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+.popup-entry .input-entry textarea {
+    width: 480px;
+    background-color: #F6C465;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    
+}
+
+.popup-entry label {
+    color: #DC6B19;
+    font-weight: bold;
+}
+
+.popup-entry .submit-btn {
+    width: 480px;
+    background-color: #6C0345;
+    color: #FCF4D9;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.popup-entry .close-btn {
+    width: 480px;
+    background-color: #6C0345;
+    color: #FCF4D9;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.popup-entry .close-btn:hover,
+.popup-entry .submit-btn:hover {
+    background-color: #DC6B19;
+}
+
+.openPopup {
+    visibility: visible;
+}
+
+/* POP UP MESSAGES */
+
 .pop-msg {
     visibility: hidden;
 }
+
+/* POP-UP CONFIRM */
+
+.confirm-popup {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    top: 45%;
+    left: 40%;
+    width: 275px;
+    padding: 25px;
+    gap: 10px;
+    background-color: #FCF4D9;
+    visibility: hidden;
+}
+
+.confirm-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.confirm-anchors {
+    width: 70px;
+    text-align: center;
+}
+
+.show-confirm-popup {
+    visibility: visible;
+}
+
 

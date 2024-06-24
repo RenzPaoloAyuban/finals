@@ -8,6 +8,32 @@ const home = document.getElementById("home");
 const aboutus = document.getElementById("aboutus");
 const whycats = document.getElementById("whycats");
 
+// POPUP
+const popup = document.getElementById("popup");
+const admin_page = document.getElementById("admin-tables");
+const welcome = document.getElementById("welcome");
+const confirm_popup = document.getElementById("confirm-popup");
+
+function insertEntry() {
+    popup.classList.add("openPopup");
+    admin_page.classList.add("blur");
+    welcome.classList.add("blur");
+}
+
+function closePopupEntry() {
+    popup.classList.remove("openPopup");
+    admin_page.classList.remove("blur");
+    welcome.classList.remove("blur");
+}
+
+function deleteRecord(id) {
+    document.getElementById(`confirm-popup-${id}`).classList.add('show-confirm-popup');
+}
+
+function cancel(id) {
+    document.getElementById(`confirm-popup-${id}`).classList.remove('show-confirm-popup');
+}
+
 // Admin Page Buttons
 const registered_users = document.getElementById("user-table");
 const furfolio_feed = document.getElementById("feed-table");
